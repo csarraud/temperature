@@ -78,7 +78,7 @@ float get_temperature_scale() {
 void set_leds_from_temperature(float temperature) {
     uint8_t integer_temperature = (int) temperature;
 
-    uint8_t nb_leds = integer_temperature - 28;
+    uint8_t nb_leds = (int) (integer_temperature - 28) / 2;
 
     for(int i=0; i<nb_leds; i++) {
         set_led(paths[i], ON);
